@@ -39,8 +39,8 @@ body {
 
 @media(max-width: 739px){
     .galeria {
-        grid-template-columns: 100%;
-        grid-template-rows: 350px 150px;
+        grid-template-columns: 300px;
+        grid-template-rows: 350px max-content;
         gap: 32px;
         height: auto;
 
@@ -63,7 +63,7 @@ body {
 
 @media(max-width: 739px){
     .foto__grande{
-       width: 90%;
+       width: 100%;
         margin: 0 auto;
         height: 350px;
     }   
@@ -154,6 +154,6 @@ body {
     }
     .miniaturas img{
        width: 33%;
-       height: 100%;
+       height: 100px;
     }
 }
