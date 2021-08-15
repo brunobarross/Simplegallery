@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+a{
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    align-items: center;
+    
+}
+
+
+.galeria{
+    display: grid;
+    grid-template-columns: 400px 200px;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    max-width: 800px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+@media(max-width: 739px){
+    .galeria {
+        grid-template-columns: 100%;
+        grid-template-rows: 350px 150px;
+        gap: 32px;
+        height: auto;
+
+        
+    }
+}
+
+
+.foto__grande{
+    position: relative;
+
+}
+
+.foto__grande img{
+    position: relative;
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+}
+
+@media(max-width: 739px){
+    .foto__grande{
+       width: 90%;
+        margin: 0 auto;
+        height: 350px;
+    }   
+}
+
+
+.foto__grande .overlay{
+    height: 100%;
+    position: absolute;
+    background: rgba(0,0,0, 0.7);
+    transition: .5s ease-in-out;
+    width: 100%;
+    top: 0;
+    opacity: 0;
+    border-radius: 8px;
+}
+
+.overlay:hover{
+    opacity: 1;
+}
+
+.foto__grande a{
+   position: absolute;
+   bottom: 64px;
+   left: 32px;
+   display: block;
+   font-size: 16px;
+   color: #fff;
+
+}
+
+
+.foto__grande a::before{
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    margin-right: 8px;
+    animation: bateVolta .3s alternate infinite;
+    border-radius: 8px;
+}
+
+@keyframes bateVolta{
+    from{
+        transform: translateX(-3px);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+.foto__grande a span{
+    display: block;
+    font-size: 22px;
+    margin-top: 8px;
+    width: 100%;
+    word-wrap: break-word;
+
+}
+
+.miniaturas{
+    display: grid;
+    align-items: center;
+    gap: 32px;
+    
+    
+}
+
+
+.miniaturas img{
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+
+@media(max-width: 739px){
+    .miniaturas{
+        display: flex;
+        width: 100%;
+        gap: 8px;
+        height: 100%;
+
+    }
+    .miniaturas img{
+       width: 33%;
+       height: 100%;
+    }
+}
